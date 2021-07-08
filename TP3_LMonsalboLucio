@@ -1,0 +1,613 @@
+
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/CPATH/delimiter=;
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/CPATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/C_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/append=true
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/appendContributed=true
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/LIBRARY_PATH/delimiter=;
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/LIBRARY_PATH/operation=remove
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/append=true
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004/appendContributed=true
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004" name="Debug">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+			<provider class="org.eclipse.cdt.managedbuilder.internal.language.settings.providers.GCCBuiltinSpecsDetectorMinGW" console="false" env-hash="-1804084125702016849" id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetectorMinGW" keep-relative-paths="false" name="CDT GCC Built-in Compiler Settings MinGW" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+				<language-scope id="org.eclipse.cdt.core.gcc"/>
+				<language-scope id="org.eclipse.cdt.core.g++"/>
+			</provider>
+		</extension>
+	</configuration>
+	<configuration id="cdt.managedbuild.config.gnu.mingw.exe.release.1865686905" name="Release">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+			<provider class="org.eclipse.cdt.managedbuilder.internal.language.settings.providers.GCCBuiltinSpecsDetectorMinGW" console="false" env-hash="-1804084125702016849" id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetectorMinGW" keep-relative-paths="false" name="CDT GCC Built-in Compiler Settings MinGW" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+				<language-scope id="org.eclipse.cdt.core.gcc"/>
+				<language-scope id="org.eclipse.cdt.core.g++"/>
+			</provider>
+		</extension>
+	</configuration>
+</project>/*
+ * OperacionesMatematicas.c
+ *
+ *  Created on: 8 abr. 2021
+ *      Author: Monsalbo Lucio
+ */
+
+#include "matematica.h"
+#include "logica.h"
+
+float sumaOperandos(float operando1, float operando2)
+{
+	float resultadoSuma;
+	resultadoSuma = operando1 + operando2;
+	return resultadoSuma;
+}
+
+float restaOperandos(float operando1, float operando2)
+{
+	float restaOperandos;
+	restaOperandos = operando1 - operando2;
+	return restaOperandos;
+}
+
+float divisionOperandos(float operando1, float operando2)
+{
+	float resultadoDivicion;
+	resultadoDivicion = operando1 / operando2;
+	return resultadoDivicion;
+}
+
+float multiplicacionOperandos(float operando1, float operando2)
+{
+	float resultadoMultiplicacion;
+	resultadoMultiplicacion = operando1 * operando2;
+	return resultadoMultiplicacion;
+}
+
+float factorialOperandos(float operando)
+{
+	int resultado;
+
+		if(operando==0)
+		{
+			resultado = 1;
+		}else{
+			resultado = operando * factorialOperandos(operando - 1);
+		}
+	return resultado;
+}
+
+/*
+ * OperacionesMatematicas.h
+ *
+ *  Created on: 8 abr. 2021
+ *      Author: Monsalbo Lucio
+ */
+
+#include <stdio.h>
+#ifndef OPERACIONESMATEMATICAS_H_
+#define OPERACIONESMATEMATICAS_H_
+
+float sumaOperandos(float operando1, float operando2);
+/**
+ * @fn float sumaOperandos(float, float)
+ * @brief suma 2 numeros de cualquier tipo
+ * 				operando1 + operando2
+ * @param operando1
+ * @param operando2
+ * @return  resultado de la suma
+ */
+
+float restaOperandos(float operando1, float operando2);
+/**
+ * @fn float restaOperandos(float, float)
+ * @brief resta 2 numeros de cualquier tipo
+ * 				operando1 - operando2
+ * @param operando1
+ * @param operando2
+ * @return  resultado de la resta
+ */
+
+float divisionOperandos(float operando1, float operando2);
+/**
+ * @fn float divisionOperandos(float, float)
+ * @brief divide 2 numeros(pueden ser con decimales)
+ * 				operando1 / operando2
+ * @param operando1
+ * @param operando2
+ * @return resultado de la division
+ */
+
+float multiplicacionOperandos(float operando1, float operando2);
+/**
+ * @fn float multiplicacionOperandos(float operando1, float operando2);
+ * @brief multiplica 2 numeros (pueden ser con decimales)
+ * 					operando1 * operando2
+ * @param operando1
+ * @param operando2
+ * @return resultado de la multiplicacion
+ */
+
+float factorialOperandos(float operando);
+/**
+ * @fn float factorialOperandos(float operando);
+ *  @brief factoriza el numero ingresado
+ *  				n!=n*(n-1)
+ *  				si n>=0
+ * @param operando
+ * @return resultado de la factorizacion
+ */
+
+#endif /* OPERACIONESMATEMATICAS_H_ */
+
+/*
+ ============================================================================
+ Name        : TP1.c
+ Author      : Monsalbo Lucio
+ Version     : 8
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "logica.h"
+#include "matematica.h"
+
+int main(void) {
+
+	setbuf(stdout, NULL);
+
+	float operando1 = 0;
+	float operando2 = 0;
+	int input = 1;/*se guarda */
+	int tercero = 0;/*usada para resultado del tercero ejercicio e igualada a 0 para validar*/
+	int cuarto = 0;/*usada para resultado del cuarto ejercicio e igualada a 0 para validar*/
+	int quinto = 0;
+	int validarMenu = 0;/*variable utilizada para validar que se allan realizado correctamente los procedimientos*/
+	float resultadoSuma;
+	float resultadoResta;
+	float resultadoDivision;
+	float resultadoMultiplicacion;
+	float resultadoFactorial1;
+	float resultadoFactorial2;
+
+	while(quinto==0)
+	{
+		do
+		{
+			system("cls");
+			validarMenu = listaMenu(operando1, operando2, tercero, cuarto);
+			scanf("%d", &input);
+			tercero = 0;/*para que al ejecutarse mas de una ves aparesca el menu correcto, de lo contrario tercero siempre quedara en 1*/
+		}while(input<1 && input>5 && validarMenu == 0);
+
+		switch(input)
+		{
+			case 1:
+				printf("ingresar 1�er operando\n");
+				fflush(stdin);
+				scanf("%f", &operando1);
+				break;
+			case 2:
+				printf("ingresar 2�do operando\n");
+				fflush(stdin);
+				scanf("%f", &operando2);
+				break;
+			case 3:
+				resultadoSuma = sumaOperandos( operando1, operando2);
+
+				resultadoResta = restaOperandos( operando1, operando2);
+
+				validarDivision(operando1, operando2, &resultadoDivision);
+
+				resultadoMultiplicacion = multiplicacionOperandos( operando1,  operando2);
+
+				validarFactorial(operando1, &resultadoFactorial1);
+
+				validarFactorial(operando2, &resultadoFactorial2);
+
+				printf("3");
+				break;
+			case 4:
+
+				mostrarCalculos(resultadoSuma,
+								resultadoResta,
+								resultadoDivision,
+								resultadoMultiplicacion,
+								resultadoFactorial1,
+								resultadoFactorial2);
+				break;
+			case 5:
+				quinto = -1;/*distinto de 0 para finalizar bucle*/
+				printf( "           GRACIAS POR UTILIZAR ESTE PROGRAMA\n"
+						"             PRODUCIDO POR Monsalbo lucio\n"
+						"              EDITADO POR Lucio Monsalbo\n"
+						"         BUILDEADO POR Alejandro Lucio Monsalbo\n"
+						"        TESTEADO POR Valerio Alejandro Monsalbo\n"
+						"        ENVIADO POR Monsalbo Lucio Alejandro Valerio\n"
+						"   AGRADECIMIENTO ESPECIAL A Lucio Alejandro Valerio Monsalbo\n");
+				break;
+		}
+	}
+		return 0;
+}
+
+/*
+ * logica.c
+ *
+ *  Created on: 15 abr. 2021
+ *      Author: Monsalbo Lucio
+ */
+
+#include "logica.h"
+#include "matematica.h"
+
+int listaMenu(float primero, float segundo, int tercero, int cuarto)
+{
+	int retorno;
+
+	if(primero ==0 && segundo == 0 && tercero == 0 && cuarto == 0)
+	{
+		printf("                      1. Ingresar 1er operando\n\n");
+		printf("                       2. Ingresar 2do operando\n\n");
+		printf("                       3. Calcular todas las operaciones\n "
+				"                                    Suma\n"
+				"                                     Resta\n "
+				"                                   Division\n  "
+				"                               Multiplicacion\n "
+				"                                  Factorial\n\n");
+		printf("                       4. Informar resultados\n\n");
+		printf("                       5. Salir\n\n ");
+		printf("ingresar opcion:a");
+		retorno = 0;
+	}else{
+		if(primero !=0 && segundo == 0 && tercero == 0 && cuarto == 0)
+		{
+			//system("cls");
+			printf("                      1. Ingresar 1er operando\n:"
+					"                                  %.2f\n", primero);
+			printf("                       2. Ingresar 2do operando\n\n");
+			printf("                       3. Calcular todas las operaciones\n "
+					"                                    Suma\n"
+					"                                     Resta\n "
+					"                                   Division\n  "
+					"                               Multiplicacion\n "
+					"                                  Factorial\n\n");
+			printf("                       4. Informar resultados\n\n");
+			printf("                       5. Salir\n\n ");
+			printf("ingresar opcion:b");
+
+			retorno = 0;
+		}else{
+			if(primero !=0 && segundo != 0 && tercero == 0 && cuarto == 0)
+			{
+				//system("cls");
+				printf("                      1. Ingresar 1er operando\n:"
+						"                                  %.2f\n", primero);
+				printf("                       2. Ingresar 2do operando:\n"
+						"                                   %.2f\n", segundo);
+				printf("                       3. Calcular todas las operaciones\n "
+						"                                    Suma\n"
+						"                                     Resta\n "
+						"                                   Division\n  "
+						"                               Multiplicacion\n "
+						"                                  Factorial\n\n");
+				printf("                       4. Informar resultados\n\n");
+				printf("                       5. Salir\n\n ");
+				printf("ingresar opcion:c");
+
+				retorno = 0;
+			}else{
+				if(primero !=0 && segundo != 0 && tercero != 0 && cuarto == 0)
+				{
+					//system("cls");
+					printf("                     1. Ingresar 1er operando\n:"
+							"                                  %.2f\n", primero);
+					printf("                       2. Ingresar 2do operando:\n"
+							"                                  %.2f\n", segundo);
+					printf("                       3. Calcular todas las operaciones\n "
+							"                                    Suma\n"
+							"                                     Resta\n "
+							"                                   Division\n  "
+							"                               Multiplicacion\n "
+							"                                  Factorial\n"
+							"                se han realizado todods los calculos con exito\n"
+							"                        pulse la opcion 4 para mostrarlos\n");
+					printf("                       4. Informar resultados\n\n");
+					printf("                       5. Salir\n\n ");
+					printf("ingresar opcion:d");
+
+					retorno = 0;
+				}else{
+					if(primero !=0 && segundo != 0 && tercero != 0 && cuarto != 0)
+					{
+						//system("cls");
+
+						printf("1. Ingresar 1er operando:%.2f\n", primero);
+						printf("2. Ingresar 2do operando:%.2f\n", segundo);
+						printf("3. Calcular todas las operaciones (Suma, Resta, Divicion, Multiplicacion, y Factorial):%d\n", tercero);
+						//"los calculos se han realizado correctamente"
+						printf("4. Informar resultados:%d\n",cuarto);
+						//llamar funcion mostrar calculos
+						printf("5. Salir \n");
+						printf("ingresar opcion:f");
+						retorno = 0;
+					}else{
+						//system("cls");
+
+						printf("ERROR, se deben realizar los pasos en el orden asignado");
+						retorno=1;
+					}
+				}
+			}
+		}
+	}
+	return retorno;
+}
+
+void validarDivision(float operando1, float operando2, float* resultadoDivision)
+{
+	if(operando2!=0)
+					{
+						*resultadoDivision = divisionOperandos( operando1,  operando2);
+					}else{
+						printf( "\n\n\n\n   ERROR \n   AL \n   INTENTAR \n   DIVIDIR\n2\n\n\n\n"
+																			"      no se puede dividir por 0\n"
+																			"      Por favor intente nuevamente:\n\n\n\n");
+					}
+
+}
+void validarFactorial(float operando, float* resultadoFactorial)
+{
+	if(operando>0)
+		{
+			*resultadoFactorial = factorialOperandos(operando);
+		}else{
+			printf( "\n\n\n\n   ERROR \n   AL \n   INTENTAR \n   FACTORIZAR\n   OPERANDO \n\n\n\n"
+														"      Por favor intente nuevamente:\n\n\n\n");
+		}
+}
+
+
+void mostrarCalculos(float resultadoSuma,
+					float resultadoResta,
+					float resultadoDivision,
+					float resultadoMultiplicacion,
+					float resultadoFactorial1,
+					float resultadoFactorial2)
+{
+
+	printf("            RESULTADOS               \n\n");
+	printf(" ___S_U_M_A____   __R_E_S_T_A___   \n");
+	printf("|              | |              |  \n");
+	printf("|     %.2f     | |     %.2f    |  \n", resultadoSuma, resultadoResta);
+	printf("|______________| |______________|  \n\n");
+
+	printf(" D_I_V_I_S_I_O_N  MULTIPLICACION   \n");
+	printf("|              | |              |  \n");
+	printf("|     %.2f     | |     %.2f     |  \n", resultadoDivision, resultadoMultiplicacion);
+	printf("|______________| |______________|  \n\n");
+
+	printf(" __FACTORIAL___   ___FACTORIAL__ \n");
+	printf("|              | |              |  \n");
+	printf("|     %.2f     | |     %.2f    |  \n", resultadoFactorial1, resultadoFactorial2);
+	printf("|______________| |______________|  \n\n\n\n");
+
+}
+
+/*
+ * logica.h
+ *
+ *  Created on: 15 abr. 2021
+ *      Author: Monsalbo Lucio
+ */
+
+#ifndef LOGICA_H_
+#define LOGICA_H_
+
+int listaMenu(float primero, float segundo, int tercero, int cuarto);
+/**
+ * @fn int listaMenu(float primero, float segundo, int tercero, int cuarto)
+ * @brief recibe 5 inputs de los cuales depende que menu se mostrara
+ *
+ * @param resultadoSuma
+ * @param resultadoResta
+ * @param resultadoDivicion
+ * @param resultadoMultiplicacion
+ * @param resultadoFactorial1
+ * @param resultadoFactorial2
+ * @return muestra los resultados en el menu y de realizarse los pasos en orden incorrecto muestra error
+ */
+
+void mostrarCalculos(float resultadoSuma,
+					float resultadoResta,
+					float resultadoDivicion,
+					float resultadoMultiplicacion,
+					float resultadoFactorial1,
+					float resultadoFactorial2);
+/**
+ * @fn void mostrarCalculos(float resultadoSuma,
+ * 							float resultadoResta,
+ *							float resultadoDivicion,
+ *							float resultadoMultiplicacion,
+ *							float resultadoFactorial1,
+ *							float resultadoFactorial2)
+ * @brief recibe los resultados y los muestra
+ *
+ * @param resultadoSuma
+ * @param resultadoResta
+ * @param resultadoDivicion
+ * @param resultadoMultiplicacion
+ * @param resultadoFActorial1
+ * @param resultadoFactorial2
+ * @return void
+ */
+
+void validarDivision(float operando1, float operando2, float* resultadoDivision);
+/**
+ * @fn void validarDivision(float operando1, float operando2, float* resultadoDivision)
+ * @brief valida que no se este dividiendo por 0 y devuelve el resultado por puntero
+ *
+ * @param operando1
+ * @param operando2
+ * @param resultadoDivision
+ * @return void
+ */
+
+void validarFactorial(float operando, float* resultadoFactorial);
+/**
+ * @fn void validarFactorial(float operando, float* resultadoFactorial)
+ * @brief valida factorial y devuelve resultado por puntero
+ *
+ * @param operando
+ * @param resultadoFactorial
+ * @return void
+ */
+
+#endif /* LOGICA_H_ */
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE64" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004" name="Debug" parent="cdt.managedbuild.config.gnu.mingw.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.debug.1635079856" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.debug">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.exe.debug.1262550857" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.exe.debug"/>
+							<builder buildPath="${workspace_loc:/TP1 Monsalbo Lucio}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.890982261" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.260924187" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.935220449" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1193586724" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.509607648" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug">
+								<option id="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level.2056187955" name="Optimization Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level.457925107" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1809660303" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.mingw.exe.debug.option.optimization.level.1922850905" name="Optimization Level" superClass="gnu.c.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.mingw.exe.debug.option.debugging.level.364266978" name="Debug Level" superClass="gnu.c.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.331842627" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.292678482" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug">
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.838530766" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.1316877531" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.mingw.exe.release.1865686905">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.mingw.exe.release.1865686905" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE64" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.mingw.exe.release.1865686905" name="Release" parent="cdt.managedbuild.config.gnu.mingw.exe.release">
+					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.release.1865686905." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.release.1941610253" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.release">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.exe.release.2031589523" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.exe.release"/>
+							<builder buildPath="${workspace_loc:/TP1 Monsalbo Lucio}/Release" id="cdt.managedbuild.tool.gnu.builder.mingw.base.973205073" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.release.2076159861" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.release">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1915784947" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.914902733" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.release.1301303322" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.release">
+								<option id="gnu.cpp.compiler.mingw.exe.release.option.optimization.level.1775178142" name="Optimization Level" superClass="gnu.cpp.compiler.mingw.exe.release.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option defaultValue="gnu.cpp.compiler.debugging.level.none" id="gnu.cpp.compiler.mingw.exe.release.option.debugging.level.1998534100" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.release.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.release.999863081" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.release">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.mingw.exe.release.option.optimization.level.1403617377" name="Optimization Level" superClass="gnu.c.compiler.mingw.exe.release.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option defaultValue="gnu.c.debugging.level.none" id="gnu.c.compiler.mingw.exe.release.option.debugging.level.1662627478" name="Debug Level" superClass="gnu.c.compiler.mingw.exe.release.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.74686605" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.release.1899273918" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.release">
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.487504182" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.release.1350854834" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.release"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="TP1 Monsalbo Lucio.cdt.managedbuild.target.gnu.mingw.exe.1577829048" name="Executable" projectType="cdt.managedbuild.target.gnu.mingw.exe"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004;cdt.managedbuild.config.gnu.mingw.exe.debug.1465151004.;cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1809660303;cdt.managedbuild.tool.gnu.c.compiler.input.331842627">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.exe.release.1865686905;cdt.managedbuild.config.gnu.mingw.exe.release.1865686905.;cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.release.999863081;cdt.managedbuild.tool.gnu.c.compiler.input.74686605">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+</cproject>
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>TP1 Monsalbo Lucio</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+</projectDescription>
